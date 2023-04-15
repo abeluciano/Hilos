@@ -10,7 +10,8 @@ public class Caballo extends Thread {
 	int N = 100;
 	static int FIN = 2;
 	
-	public Caballo(JProgressBar jpb, JTextArea jta) {
+	public Caballo(JProgressBar jpb, JTextArea jta, String N) {
+		super (N);
 		this.jpb_1 = jpb;
 		this.jta_1 = jta;
 	}

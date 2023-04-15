@@ -16,7 +16,8 @@ import java.awt.event.ActionEvent;
 public class Simulacion5 {
 
 	private JFrame frame;
-
+	private Thread de_01;
+	private Thread de_02;
 	/**
 	 * Launch the application.
 	 */
@@ -53,10 +54,19 @@ public class Simulacion5 {
 		JButton ButtonInicio = new JButton("Inicio");
 		ButtonInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				de_01.start();
+				de_02.start();
 			}
 		});
 		
 		JButton ButtonTerminar = new JButton("Terminar");
+		ButtonTerminar.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed(ActionEvent arg0) {
+				de_01.stop();
+				de_02.stop();
+			}
+		});
 		
 		JLabel lblNewLabel = new JLabel("Por: aaragona@ulasalle.edu.pe");
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
@@ -88,6 +98,8 @@ public class Simulacion5 {
 		);
 		
 		JTextArea textArea = new JTextArea();
+		de_01 = new Demonio4(textArea, "Devil Jin");
+		de_02 = new Demonio4(textArea, "True Ogre");
 		scrollPane.setViewportView(textArea);
 		frame.getContentPane().setLayout(groupLayout);
 	}

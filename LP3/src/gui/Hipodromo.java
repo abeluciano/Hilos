@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -130,9 +129,9 @@ public class Hipodromo {
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
 		
-		ca_01 = new Caballo(progressBar, textArea);
-		ca_02 = new Caballo(progressBar_1, textArea);
-		ca_03= new Caballo(progressBar_2, textArea);
+		ca_01 = new Caballo(progressBar, textArea, "Tornado");
+		ca_02 = new Caballo(progressBar_1, textArea, "Pegaso");
+		ca_03= new Caballo(progressBar_2, textArea, "Socrates");
 		
 		frame.getContentPane().setLayout(groupLayout);
 	}
