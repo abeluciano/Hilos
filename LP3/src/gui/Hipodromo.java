@@ -63,7 +63,7 @@ public class Hipodromo {
 		ca_02 = new Caballo(progressBar_1);
 		
 		JProgressBar progressBar_2 = new JProgressBar();
-		ca_03= new Caballo(progressBar);
+		ca_03= new Caballo(progressBar_2);
 		
 		JLabel lblNewLabel = new JLabel("Tornado");
 		
@@ -133,6 +133,10 @@ public class Hipodromo {
 		);
 		
 		JTextArea textArea = new JTextArea();
+		ca_01 = new Caballo(textArea);
+		ca_02 = new Caballo(textArea);
+		ca_03 = new Caballo(textArea);
+		
 		scrollPane.setViewportView(textArea);
 		frame.getContentPane().setLayout(groupLayout);
 	}
