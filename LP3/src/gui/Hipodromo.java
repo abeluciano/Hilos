@@ -1,6 +1,8 @@
 package gui;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
@@ -16,7 +18,10 @@ import javax.swing.UIManager;
 public class Hipodromo {
 
 	private JFrame frame;
-
+	
+	private Thread ca_01;
+	private Thread ca_02;
+	private Thread ca_03;
 	/**
 	 * Launch the application.
 	 */
@@ -52,10 +57,13 @@ public class Hipodromo {
 		JScrollPane scrollPane = new JScrollPane();
 		
 		JProgressBar progressBar = new JProgressBar();
+		ca_01 = new Caballo(progressBar);
 		
 		JProgressBar progressBar_1 = new JProgressBar();
+		ca_02 = new Caballo(progressBar_1);
 		
 		JProgressBar progressBar_2 = new JProgressBar();
+		ca_03= new Caballo(progressBar);
 		
 		JLabel lblNewLabel = new JLabel("Tornado");
 		
@@ -64,6 +72,13 @@ public class Hipodromo {
 		JLabel lblNewLabel_2 = new JLabel("Socrates");
 		
 		JButton btnNewButton = new JButton("Empezar carrera");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ca_01.start();
+				ca_02.start();
+				ca_03.start();
+			}
+		});
 		
 		JLabel lblNewLabel_3 = new JLabel("Por: aaragona@ulasalle.edu.pe");
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());

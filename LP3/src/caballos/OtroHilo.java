@@ -1,6 +1,13 @@
 package caballos;
 
+import javax.swing.JProgressBar;
+
 public class OtroHilo extends Thread {
+	
+	JProgressBar jpb_1;
+	
+	
+	
 	static int FIN = 4;
 	public OtroHilo(String str) {
 		super(str);
@@ -11,7 +18,7 @@ public class OtroHilo extends Thread {
 			System.out.println("Posicion" + i + ": " + getName());
 			try {
 				sleep((int) (Math.random() * 2000));
-				System.out.println("El caballo" + getName() + "descansa.");
+				System.out.println("El caballo " + getName() + " descansa.");
 			} catch (InterruptedException e) {
 				System.out.println(e);
 			}
