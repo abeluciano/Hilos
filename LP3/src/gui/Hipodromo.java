@@ -56,8 +56,11 @@ public class Hipodromo {
 		JScrollPane scrollPane = new JScrollPane();
 		
 		JProgressBar progressBar = new JProgressBar();		
+		progressBar.setMaximum(100);
 		JProgressBar progressBar_1 = new JProgressBar();
+		progressBar_1.setMaximum(100);
 		JProgressBar progressBar_2 = new JProgressBar();
+		progressBar_2.setMaximum(100);
 		
 		JLabel lblNewLabel = new JLabel("Tornado");
 		
